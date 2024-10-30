@@ -11,7 +11,9 @@ import { AppHeader } from './cmps/AppHeader.jsx'
 import { HomePage } from './pages/HomePage.jsx'
 
 import { store } from './store/store.js'
-
+import { ToyIndex } from './pages/ToyIndex.jsx'
+import { ToyEdit } from './pages/ToyEdit.jsx'
+import { ToyDetails } from './pages/ToyDetails.jsx'
 export default function App() {
     return (
         <Provider store={store}>
@@ -21,6 +23,10 @@ export default function App() {
                     <main className="main-layout">
                         <Routes>
                             <Route element={<HomePage />} path="/" />
+                            <Route element={<ToyIndex />} path="/toy" />
+                            <Route element={<ToyEdit />} path="/toy/edit/:toyId?" />
+
+                            <Route element={<ToyDetails />} path="/toy/details/:toyId" />
                         </Routes>
                     </main>
                 </section>
